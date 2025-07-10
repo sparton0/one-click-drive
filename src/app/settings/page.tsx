@@ -1,9 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './settings.module.scss'
 import SideNav from '../components/SideNav'
 import { Tabs, Tab, Box, Typography, TextField, Button, Switch, FormControlLabel, Divider, Card, CardContent } from '@mui/material'
 import { MdPerson, MdNotifications, MdSecurity, MdBrush, MdLanguage } from 'react-icons/md'
+import axios from 'axios'
+import { useRouter } from 'next/navigation'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -13,7 +15,32 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
+  const router = useRouter()
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [authError, setAuthError] = useState<string | null>(null)
 
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await axios.get('/api/auth/check')
+        if (response.data.authenticated) {
+          setIsAuthenticated(true)
+        } else {
+          setAuthError('Not authenticated')
+          router.push('/login')
+        }
+      } catch (error: any) {
+        console.error('Authentication check failed:', error)
+        setAuthError(error.message || 'Authentication check failed')
+        router.push('/login')
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    checkAuth()
+  }, [router])  
   return (
     <div
       role="tabpanel"
