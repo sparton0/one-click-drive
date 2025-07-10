@@ -1,0 +1,107 @@
+[
+  {
+    "email": "alice@example.com",
+    "name": "Alice Johnson",
+    "username": "alicej",
+    "password": "hashedpassword1",
+    "image": "/default.png"
+  },
+  {
+    "email": "bob@example.com",
+    "name": "Bob Smith",
+    "username": "bobsmith",
+    "password": "hashedpassword2",
+    "image": "/default.png"
+  },
+  {
+    "email": "carol@example.com",
+    "name": "Carol Williams",
+    "username": "carolw",
+    "password": "hashedpassword3",
+    "image": "/default.png"
+  },
+  {
+    "email": "david@example.com",
+    "name": "David Brown",
+    "username": "davidb",
+    "password": "hashedpassword4",
+    "image": "/default.png"
+  },
+  {
+    "email": "eve@example.com",
+    "name": "Eve Davis",
+    "username": "eved",
+    "password": "hashedpassword5",
+    "image": "/default.png"
+  },
+  {
+    "email": "frank@example.com",
+    "name": "Frank Miller",
+    "username": "frankm",
+    "password": "hashedpassword6",
+    "image": "/default.png"
+  },
+  {
+    "email": "grace@example.com",
+    "name": "Grace Wilson",
+    "username": "gracew",
+    "password": "hashedpassword7",
+    "image": "/default.png"
+  },
+  {
+    "email": "harry@example.com",
+    "name": "Harry Moore",
+    "username": "harrym",
+    "password": "hashedpassword8",
+    "image": "/default.png"
+  },
+  {
+    "email": "irene@example.com",
+    "name": "Irene Taylor",
+    "username": "irenet",
+    "password": "hashedpassword9",
+    "image": "/default.png"
+  },
+  {
+    "email": "jack@example.com",
+    "name": "Jack Anderson",
+    "username": "jacka",
+    "password": "hashedpassword10",
+    "image": "/default.png"
+  },
+  {
+    "email": "kate@example.com",
+    "name": "Kate Thomas",
+    "username": "katet",
+    "password": "hashedpassword11",
+    "image": "/default.png"
+  },
+  {
+    "email": "leo@example.com",
+    "name": "Leo Jackson",
+    "username": "leoj",
+    "password": "hashedpassword12",
+    "image": "/default.png"
+  },
+  {
+    "email": "mia@example.com",
+    "name": "Mia White",
+    "username": "miaw",
+    "password": "hashedpassword13",
+    "image": "/default.png"
+  },
+  {
+    "email": "nate@example.com",
+    "name": "Nate Harris",
+    "username": "nateh",
+    "password": "hashedpassword14",
+    "image": "/default.png"
+  },
+  {
+    "email": "olivia@example.com",
+    "name": "Olivia Martin",
+    "username": "oliviam",
+    "password": "hashedpassword15",
+    "image": "/default.png"
+  }
+]

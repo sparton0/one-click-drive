@@ -1,0 +1,29 @@
+.edit_model {
+    padding: 2rem;
+    width:45rem;
+    // max-width: 800px;
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-color);
+        text-align: center;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .button_container {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .save_button, .cancel_button {
+        min-width: 100px;
+    }
+}

@@ -1,0 +1,33 @@
+.modalWrapper {
+    /* background-color: var(--bg-card);  */
+    background-color: #80808040;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    /* border: 1px solid var(--border-color); */
+
+}
+
+.modalContainer {
+    display: flex;
+    background-color: var(--bg-card); 
+    border: 1px solid var(--border-color);
+    color: var(--text-color) ;
+
+    width: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.closeBtn {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}

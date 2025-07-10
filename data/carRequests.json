@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "phone": "9876543210",
+    "car_model": "Toyota Camry",
+    "duration": "1 day",
+    "status": "Approved"
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "phone": "9876543211",
+    "car_model": "Honda Accord",
+    "duration": "3 days",
+    "status": "Approved"
+  },
+  {
+    "id": 3,
+    "name": "Carol Williams",
+    "phone": "9876543212",
+    "car_model": "Hyundai Elantra",
+    "duration": "2 days",
+    "status": "Rejected"
+  },
+  {
+    "id": 4,
+    "name": "David Brown",
+    "phone": "9876543213",
+    "car_model": "Kia Seltos",
+    "duration": "4 days",
+    "status": "Pending"
+  },
+  {
+    "id": 5,
+    "name": "Eve Davis",
+    "phone": "9876543214",
+    "car_model": "BMW X3",
+    "duration": "2 days",
+    "status": "Approved"
+  },
+  {
+    "id": 6,
+    "name": "Frank Miller",
+    "phone": "9876543215",
+    "car_model": "Audi A4",
+    "duration": "1 day",
+    "status": "Pending"
+  },
+  {
+    "id": 7,
+    "name": "Grace Wilson",
+    "phone": "9876543216",
+    "car_model": "Nissan Altima",
+    "duration": "5 days",
+    "status": "Approved"
+  },
+  {
+    "id": 8,
+    "name": "Harry Moore",
+    "phone": "9876543217",
+    "car_model": "Volkswagen Passat",
+    "duration": "2 days",
+    "status": "Rejected"
+  },
+  {
+    "id": 9,
+    "name": "Irene Taylor",
+    "phone": "9876543218",
+    "car_model": "Chevrolet Malibu",
+    "duration": "1 day",
+    "status": "Pending"
+  },
+  {
+    "id": 10,
+    "name": "Jack Anderson",
+    "phone": "9876543219",
+    "car_model": "Tesla Model 3",
+    "duration": "3 days",
+    "status": "Approved"
+  },
+  {
+    "id": 11,
+    "name": "Kate Thomas",
+    "phone": "9876543220",
+    "car_model": "Ford Focus",
+    "duration": "2 days",
+    "status": "Pending"
+  },
+  {
+    "id": 12,
+    "name": "Leo Jackson",
+    "phone": "9876543221",
+    "car_model": "Jeep Compass",
+    "duration": "4 days",
+    "status": "Rejected"
+  },
+  {
+    "id": 13,
+    "name": "Mia White",
+    "phone": "9876543222",
+    "car_model": "Mercedes C-Class",
+    "duration": "1 day",
+    "status": "Approved"
+  },
+  {
+    "id": 14,
+    "name": "Nate Harris",
+    "phone": "9876543223",
+    "car_model": "Skoda Superb",
+    "duration": "2 days",
+    "status": "Pending"
+  },
+  {
+    "id": 15,
+    "name": "Olivia Martin",
+    "phone": "9876543224",
+    "car_model": "Volvo S60",
+    "duration": "3 days",
+    "status": "Approved"
+  }
+]

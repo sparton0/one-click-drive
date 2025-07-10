@@ -1,0 +1,136 @@
+.settings_container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-main);
+}
+
+.settings_content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 23rem;
+}
+
+.settings_title {
+    margin-bottom: 2rem !important;
+    color: var(--text-color);
+    font-weight: 600 !important;
+}
+
+.settings_card {
+    background-color: var(--bg-card) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.settings_card_content {
+    display: flex !important;
+    padding: 0 !important;
+}
+
+.tabs_container {
+    min-width: 220px;
+    border-right: 1px solid var(--border-color, #e0e0e0) !important;
+    border-bottom: none !important;
+    height: 100%;
+}
+
+.tabs {
+    width: 100%;
+    
+    :global(.MuiTabs-indicator) {
+        left: 0;
+        right: auto;
+    }
+}
+
+.tab {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding: 1.2rem 1.5rem !important;
+    font-size: 1rem !important;
+    min-height: 60px !important;
+    
+    svg {
+        font-size: 1.5rem !important;
+        margin-right: 0.75rem !important;
+    }
+}
+
+.tab_panels {
+    flex: 1;
+    overflow: auto;
+}
+
+.tab_panel {
+    height: 100%;
+}
+
+.divider {
+    margin-bottom: 1.5rem !important;
+}
+
+.form {
+    max-width: 600px;
+    
+    .input {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .button {
+        margin-top: 1.5rem !important;
+        padding: 0.75rem 1.5rem !important;
+        font-weight: 600 !important;
+    }
+}
+
+.notification_settings {
+    max-width: 600px;
+    
+    :global(.MuiFormControlLabel-root) {
+        margin-top: 1.5rem !important;
+        margin-left: 0 !important;
+    }
+    
+    .setting_description {
+        margin-left: 2.5rem !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+.appearance_settings, .language_settings {
+    .theme_options, .language_options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .theme_card, .language_card {
+        width: 120px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        &_active {
+            border-color: var(--brand-color, #1976d2);
+        }
+    }
+    
+    .font_size_slider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        
+        .slider {
+            flex: 1;
+        }
+    }
+}

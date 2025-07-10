@@ -1,0 +1,211 @@
+:root {
+  --main-font: var(--font-mulish);
+
+  --bg-main: #e6e6e6f8;
+  --grey-main: rgba(231, 231, 231, 0.6);
+  --bg-card: #fdfdfd;
+  --bg-card-hover: #fae9d9;
+  --text-color: #292929;
+  --text-secondary: #666;
+  --border-color: #e0e0e0;
+  --header-color: #2b3674;
+  --brand-color: #ed8413;
+  --login-bg-color: #ed8413;
+  --green-color: #008916;
+  --brand-boder-color: #f9700000;
+  --brand-text-color: #ffffff;
+  --not-text-color: #ccc;
+  --lisha-form-bg-color: #fff;
+  --lisha-form-text-color: #666f8d;
+  --loader-first-color: #f3f3f3eb;
+  --loader-second-color: #e6e3e3e3;
+  --foreground-color: #292929;
+  --accent-color: #ed8413;
+}
+// background: linear-gradient(293deg, #cc4700, #ed8413) //btn background
+.dark {
+  --grey-main: rgba(194, 194, 194, 0.115);
+  --bg-card-hover: #fae9d917;
+  --not-text-color: #cccccc3c;
+  --lisha-form-bg-color: #121212;
+  --lisha-form-text-color: #c1c1c1;
+  --green-color: #0eb92b;
+  --login-bg-color: #121212;
+  --brand-color: #ed8413;
+  --brand-boder-color: #ed8413;
+  --brand-text-color: #ed8413;
+  --bg-main: #121212;
+  --bg-card: #1e1e1e;
+  --text-color: #ffffff;
+  --text-secondary: #bbb;
+  --border-color: #333;
+  --header-color: #bbc1e8;
+  --loader-first-color: #f3f3f31b;
+  --loader-second-color: #e6e3e346;
+  --foreground-color: #ffffff;
+  --accent-color: #ed8413;
+}
+
+p,
+li,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+  // font-optical-sizing: auto;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  // -webkit-user-select: none; /* Safari */
+  // -ms-user-select: none; /* IE 10 and IE 11 */
+  // user-select: none; /* Standard syntax */
+  touch-action: pan-y;
+}
+html,
+body {
+  font-family: var(--main-font);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--bg-main);
+  overflow-x: hidden;
+  overflow-y: auto;
+  // Custom scrollbar styles
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--grey-main); // Adjust this color as needed
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--brand-color); // Adjust this color as needed
+    border-radius: 0rem 1rem 1rem 0rem;
+    border: 1px solid var(--text-color); // Adjust this color as needed
+  }
+}
+// body::-webkit-scrollbar{
+//   display: none
+// }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+span,
+pre {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+input,
+button {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  border: none;
+  background: transparent;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+button {
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+.MuiPaper-root,
+.MuiDataGrid-root,
+.MuiFormLabel-root,
+.MuiInputBase-root,
+.MuiDataGrid-filler,
+.MuiDataGrid-columnHeader,
+.MuiDataGrid-cell,
+.MuiDataGrid-toolbarContainer,
+.MuiTablePagination-root,
+.MuiDataGrid-iconButtonContainer,
+.MuiButtonBase-root,
+.MuiSvgIcon-root,
+.MuiList-root,
+.MuiToolbar-root,
+.MuiToolbar-gutters,
+.MuiToolbar-regular,
+.MuiTablePagination-toolbar,
+.css-1gak8h1-MuiToolbar-root-MuiTablePagination-toolbar,
+.MuiTablePagination-selectLabel,
+.MuiTablePagination-select,
+.MuiTablePagination-selectIcon,
+.MuiTablePagination-actions,
+.MuiTablePagination-displayedRows,
+.MuiDataGrid-columnHeaderTitleContainer,
+.MuiDataGrid-menuIcon,
+.MuiDataGrid-columnSeparator--resizable,
+.MuiDataGrid-columnSeparator--sideRight,
+.MuiDataGrid-columnSeparator,
+.MuiDataGrid-footerContainer {
+  font-family: var(--main-font) !important;
+  background-color: var(--bg-card) !important;
+  color: var(--text-color) !important;
+  border-color: var(--border-color) !important;
+}
+.MuiOutlinedInput-notchedOutline{
+  border-color: var(--border-color) !important;
+}
+.MuiDataGrid-root .MuiDataGrid-container--top [role="row"] {
+  background-color: var(
+    --header-bg-color
+  ) !important; /* Set a custom header background */
+  border-bottom: var(--border-color) !important;
+  border-color: var(--border-color) !important;
+
+  /* border: 0.1px solid var(--border-color) !important;; */
+}
+.MuiDataGrid-row--borderBottom {
+  background-color: var(
+    --header-bg-color
+  ) !important;
+  color: var(--text-color) !important;
+
+  border-bottom: var(--border-color) !important;
+}
+.rmsc.multi-select,
+.dropdown-container,
+.dropdown-content {
+  background-color: var(--bg-card) !important;
+  color: var(--text-color) !important;
+}
+
+.rmsc * {
+  background-color: var(--bg-card) !important;
+  color: var(--text-color) !important;
+  border: none;
+}
+@media (max-width: 1192px) {
+  html {
+    font-size: 50.9%;
+  }
+}
+@media (max-width: 970px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    // overflow: hidden;
+    margin-bottom: 6rem;
+  }
+}

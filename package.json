@@ -1,0 +1,43 @@
+{
+  "name": "one-click-drive",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.2.0",
+    "@mui/styled-engine-sc": "^7.2.0",
+    "@mui/x-data-grid": "^8.7.0",
+    "antd": "^5.26.4",
+    "axios": "^1.10.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "formik": "^2.4.6",
+    "framer-motion": "^12.23.0",
+    "fs": "^0.0.1-security",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.2",
+    "next": "14.1.0",
+    "next-themes": "^0.4.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.5.0",
+    "sass": "^1.89.2",
+    "swr": "^2.3.4",
+    "vercel": "^44.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
+  }
+}

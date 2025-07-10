@@ -1,0 +1,47 @@
+.table_header {
+    margin-left: 23rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    h2 {
+        font-size: 2rem;
+        color: var(--text-color);
+    }
+}
+
+.table_data {
+    // width: 100%;
+    // height: 100%;
+    margin-left: 23rem;
+}
+
+.action_buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    svg {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    :global(.MdModeEdit) {
+        color: var(--brand-color);
+    }
+
+    :global(.IoIosCloseCircle) {
+        color: #dc3545;
+    }
+
+    :global(.MdCheckCircle) {
+        color: #28a745;
+    }
+}
