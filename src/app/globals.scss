@@ -10,6 +10,7 @@
   --border-color: #e0e0e0;
   --header-color: #2b3674;
   --brand-color: #ed8413;
+  --brand-color-rgb: 237, 132, 19;
   --login-bg-color: #ed8413;
   --green-color: #008916;
   --brand-boder-color: #f9700000;
@@ -32,6 +33,7 @@
   --green-color: #0eb92b;
   --login-bg-color: #121212;
   --brand-color: #ed8413;
+  --brand-color-rgb: 237, 132, 19;
   --brand-boder-color: #ed8413;
   --brand-text-color: #ed8413;
   --bg-main: #121212;
@@ -87,13 +89,13 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--grey-main); // Adjust this color as needed
+    background: var(--grey-main); 
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: var(--brand-color); // Adjust this color as needed
+    background-color: var(--brand-color);
     border-radius: 0rem 1rem 1rem 0rem;
-    border: 1px solid var(--text-color); // Adjust this color as needed
+    border: 1px solid var(--text-color); 
   }
 }
 // body::-webkit-scrollbar{
