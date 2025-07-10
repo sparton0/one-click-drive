@@ -1,7 +1,8 @@
 // import { Schema, model, models } from "mongoose";
 // import defaultpic from "../public/default.png";
 
-const CarSchema =  [
+// Initial car request data
+const initialCarRequests = [
     { id: 1, name: 'Alice Johnson', phone: '9876543210', car_model: 'Toyota Camry', duration: '1 day', status: 'Pending' },
     { id: 2, name: 'Bob Smith', phone: '9876543211', car_model: 'Honda Accord', duration: '3 days', status: 'Approved' },
     { id: 3, name: 'Carol Williams', phone: '9876543212', car_model: 'Hyundai Elantra', duration: '2 days', status: 'Rejected' },
@@ -17,8 +18,50 @@ const CarSchema =  [
     { id: 13, name: 'Mia White', phone: '9876543222', car_model: 'Mercedes C-Class', duration: '1 day', status: 'Approved' },
     { id: 14, name: 'Nate Harris', phone: '9876543223', car_model: 'Skoda Superb', duration: '2 days', status: 'Pending' },
     { id: 15, name: 'Olivia Martin', phone: '9876543224', car_model: 'Volvo S60', duration: '3 days', status: 'Approved' }
-  ];
+];
 
-// const User = models.User || model("User", CarSchema);
+// In a real app, this would be a database
+// For this demo, we'll use localStorage in the browser and a module variable in Node.js
+let carRequests = [...initialCarRequests];
 
-export default CarSchema;
+// Helper functions for managing car requests
+export function getCarRequests() {
+  // Return a copy of the car requests to avoid direct mutation
+  return [...carRequests];
+}
+
+export function updateCarRequestStatus(id: number, status: string) {
+  const index = carRequests.findIndex(req => req.id === id);
+  
+  if (index === -1) {
+    return null;
+  }
+  
+  carRequests[index] = {
+    ...carRequests[index],
+    status
+  };
+  
+  return carRequests[index];
+}
+
+export function addCarRequest(request: any) {
+  // Generate a new ID
+  const newId = Math.max(...carRequests.map(req => req.id)) + 1;
+  
+  const newRequest = {
+    ...request,
+    id: newId,
+    status: request.status || 'Pending'
+  };
+  
+  carRequests.push(newRequest);
+  return newRequest;
+}
+
+export function resetCarRequests() {
+  carRequests = [...initialCarRequests];
+  return carRequests;
+}
+
+export default initialCarRequests;

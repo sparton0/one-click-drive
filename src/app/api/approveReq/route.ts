@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
 import connectDb from "../../database/conn";
 import mongoose from 'mongoose';
-import CarRequestSchema from "../../model/carRequest";
+import { updateCarRequestStatus } from "../../model/carRequest";
 
 export async function POST(req: Request) {
     try {
-        await connectDb();
         const { id } = await req.json();
         
         if (!id) {
@@ -15,26 +14,24 @@ export async function POST(req: Request) {
             );
         }
         
-        console.log('Request ID:', id);
+        console.log('Approving request ID:', id);
         
-        const requestIndex = CarRequestSchema.findIndex(req => req.id === id);
+        // Update the status using the helper function
+        const updatedRequest = updateCarRequestStatus(id, 'Approved');
         
-        if (requestIndex === -1) {
+        if (!updatedRequest) {
             return NextResponse.json(
                 { message: 'Request not found' },
                 { status: 404 }
             );
         }
         
-        // Update the status
-        CarRequestSchema[requestIndex].status = 'Approved';
-        
-        console.log('Updated request:', CarRequestSchema[requestIndex]);
+        console.log('Updated request:', updatedRequest);
         
         return NextResponse.json({ 
             success: true, 
             message: 'Request approved successfully',
-            data: CarRequestSchema[requestIndex]
+            data: updatedRequest
         });
     } catch (error) {
         console.error('Error approving request:', error);
