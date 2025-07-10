@@ -5,15 +5,16 @@ import SideNav from '../components/SideNav'
 import UserTableData from '../components/UserTableData'
 import axios from 'axios'
 import useSWR from 'swr'
-import { Typography } from '@mui/material'
+import { Typography, Button } from '@mui/material'
 import { useRouter } from 'next/navigation'
 
 const fetcher = async (url: string) => {
   try {
     const response = await axios.get(url);
+    console.log(`Fetched data from ${url}:`, response.data);
     return response.data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error(`Error fetching data from ${url}:`, error);
     throw error;
   }
 };
@@ -22,6 +23,7 @@ function UserTable() {
   const router = useRouter()
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
+  const [authError, setAuthError] = useState<string | null>(null)
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -30,10 +32,12 @@ function UserTable() {
         if (response.data.authenticated) {
           setIsAuthenticated(true)
         } else {
+          setAuthError('Not authenticated')
           router.push('/login')
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error('Authentication check failed:', error)
+        setAuthError(error.message || 'Authentication check failed')
         router.push('/login')
       } finally {
         setIsLoading(false)
@@ -48,10 +52,31 @@ function UserTable() {
     mutate: mutateUsers,
     error: userError,
     isLoading: userDataLoading
-  } = useSWR("/api/users", fetcher);
+  } = useSWR("/api/users", fetcher, {
+    onError: (error) => {
+      console.error("SWR error fetching users:", error);
+    },
+    revalidateOnFocus: false,
+    dedupingInterval: 10000
+  });
 
   if (isLoading) {
     return <div className={styles.loading}>Loading...</div>
+  }
+
+  if (authError) {
+    return (
+      <div className={styles.error}>
+        <p>Authentication Error: {authError}</p>
+        <Button 
+          variant="contained" 
+          color="primary"
+          onClick={() => router.push('/login')}
+        >
+          Go to Login
+        </Button>
+      </div>
+    );
   }
 
   if (!isAuthenticated) {

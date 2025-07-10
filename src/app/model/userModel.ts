@@ -1,3 +1,4 @@
+import { Schema, model, models } from "mongoose";
 // import { Schema, model, models } from "mongoose";
 // import fs from 'fs/promises';
 // import path from 'path';
@@ -18,7 +19,9 @@
 //         password: "password456",
 //         image: "/default.png"
 //     }
-const Users = [
+
+// Initial users data
+const initialUsers = [
   { id: 1, name: 'John Smith', phone: '555-123-4567', city: 'New York', state: 'NY', zip: '10001', status: 'Active' },
   { id: 2, name: 'Emily Johnson', phone: '555-234-5678', city: 'Los Angeles', state: 'CA', zip: '90001', status: 'Active' },
   { id: 3, name: 'Michael Williams', phone: '555-345-6789', city: 'Chicago', state: 'IL', zip: '60601', status: 'Inactive' },
@@ -51,4 +54,46 @@ const Users = [
   { id: 30, name: 'Samantha Young', phone: '555-001-1223', city: 'Albuquerque', state: 'NM', zip: '87101', status: 'Inactive' }
 ];
 
-export default Users;
+let users = [...initialUsers];
+
+export function getUsers() {
+  return [...users];
+}
+
+export function getUserById(id: number) {
+  return users.find(user => user.id === id) || null;
+}
+
+export function updateUserStatus(id: number, status: string) {
+  const index = users.findIndex(user => user.id === id);
+  
+  if (index === -1) {
+    return null;
+  }
+  
+  users[index] = {
+    ...users[index],
+    status
+  };
+  
+  return users[index];
+}
+
+export function addUser(user: any) {
+  const newId = Math.max(...users.map(user => user.id)) + 1;
+  
+  const newUser = {
+    ...user,
+    id: newId
+  };
+  
+  users.push(newUser);
+  return newUser;
+}
+
+export function resetUsers() {
+  users = [...initialUsers];
+  return users;
+}
+
+export default initialUsers;
